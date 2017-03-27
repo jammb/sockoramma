@@ -33,12 +33,34 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'figaro'
+gem 'simple_form'
+gem 'pry-rails', group: :development
+gem 'pry-nav'
+
+gem 'sendgrid-ruby'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem "twilio-ruby"
+gem 'rails_12factor', group: :production
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'shoulda', '~> 3.5.0'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'ffaker'
+gem 'faker'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'capybara', '~> 2.5'
 end
 
 group :development do
