@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'figaro'
-gem 'simple_form'
 gem 'pry-rails', group: :development
 gem 'pry-nav'
 
