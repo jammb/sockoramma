@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :materials
   get 'materials/index'
 
   get 'materials/create'
