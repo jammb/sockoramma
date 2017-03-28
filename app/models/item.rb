@@ -5,8 +5,11 @@ class Item < ApplicationRecord
   has_many :orders, through: :orderings
   has_many :sizes, through: :quantities
 
-  validates :name, presence: true
+  validates :title, presence: true
   validates :description, presence: true
-  validates :street, presence: true
+  validates :price, presence: true
+  validates :material_id, presence: true
+  validates :color_id, presence: true
+  validates :style_id, presence: true
 
 end
