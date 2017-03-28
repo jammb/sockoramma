@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170328191257) do
     t.integer  "style_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.boolean  "featured"
+    t.boolean  "featured", default: false
     t.index ["color_id"], name: "index_items_on_color_id", using: :btree
     t.index ["material_id"], name: "index_items_on_material_id", using: :btree
     t.index ["style_id"], name: "index_items_on_style_id", using: :btree
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20170328191257) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.boolean  "admin"
+    t.boolean  "admin", default: false
   end
 
   add_foreign_key "addresses", "users"
