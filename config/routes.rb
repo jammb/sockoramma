@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :contents
   scope :api do
     resources :users
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
     resources :materials
   end
   
-
+  get "/:param1(/:param2)(/:param3)" => "application#static"
 end
