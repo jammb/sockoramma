@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+.radioSlider {
+    margin-top: 50px;
+}
+
+#buttonContainer {
+    display: inline-block;
+}
