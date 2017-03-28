@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     resources :materials
   end
   
-
+  get "/:param1(/:param2)(/:param3)" => "application#static"
 end
