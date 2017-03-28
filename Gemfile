@@ -49,6 +49,9 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'ffaker'
 gem 'faker'
+gem 'ransack'
+gem 'pg_search'
+gem 'rails_admin', '1.1.0'
 
 
 # Use Capistrano for deployment
