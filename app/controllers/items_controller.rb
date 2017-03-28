@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Items.all
+    @items = Item.all
     render json: @items
   end
-  
+
 end
