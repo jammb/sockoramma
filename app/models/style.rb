@@ -1,5 +1,5 @@
 class Style < ApplicationRecord
   has_many :items
-  
-  validates :cut, presence: true
+
+  validates :name, presence: true
 end
