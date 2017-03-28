@@ -42,8 +42,7 @@ gem 'sendgrid-ruby'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "twilio-ruby"
 gem 'rails_12factor', group: :production
-gem 'kaminari'
-gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'kaminari', '~> 0.14'
 gem 'shoulda', '~> 3.5.0'
 gem 'carrierwave'
 gem 'cloudinary'
