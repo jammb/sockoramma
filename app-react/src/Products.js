@@ -12,7 +12,13 @@ class Products extends Component {
             <Header/>
             <div className="container">
                 <Sidebar />
+                <div className="col-sm-9 column" id="itemColumn">
+                    <div className="row">
                 <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                </div>
+                </div>
             </div>
         </div>
         );

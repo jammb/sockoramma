@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ProductCard extends React.Component {
+class FeaturedProduct extends React.Component {
     render() {
         return   <div className="col s6 m4">
                     <div className="card large">
@@ -21,4 +21,4 @@ class ProductCard extends React.Component {
     }
 }
 
-export default ProductCard
+export default FeaturedProduct
