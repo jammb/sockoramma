@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :contents
   scope :api do
     resources :users
     resources :addresses
