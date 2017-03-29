@@ -1,6 +1,14 @@
 import React from 'react'
 
 class Sidebar extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            typeAlpaca: false
+        }
+    }
+
     render() {
         console.log(this.props.filterProducts)
         return ( <div className="col-sm-3 column" id="filterColumn">

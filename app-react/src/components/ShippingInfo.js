@@ -30,7 +30,7 @@ class CustomerInfo extends Component {
 					<option value="HI">Hawaii</option>
 					<option value="ID">Idaho</option>
 					<option value="IL">Illinois</option>
-					<option selected value="IN">Indiana</option>
+					<option value="IN">Indiana</option>
 					<option value="IA">Iowa</option>
 					<option value="KS">Kansas</option>
 					<option value="KY">Kentucky</option>
