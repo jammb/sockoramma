@@ -30,10 +30,11 @@ class Products extends Component {
 
     constructor(props) {
         super(props)
-        this.filterProducts = this.filterProducts.bind(this)
+        this.filterProductsMaterial = this.filterProductsMaterial.bind(this)
+        this.filterProductsStyle = this.filterProductsStyle.bind(this)
 
         this.state = {
-            // originalItems: [],
+            originalItems: [],
             items: [],
             filters: {}
         }
@@ -42,16 +43,25 @@ class Products extends Component {
     componentWillMount() {
         fetch('https://sock-o-ramma.herokuapp.com/api/items')
             .then(response => response.json())
-            .then(response => this.setState({ items: response }))
-            // .then(response => this.setState({ items: response, originalItems: response }))
+            // .then(response => this.setState({ items: response }))
+            .then(response => this.setState({ items: response, originalItems: response }))
 
     }
 
-    filterProducts(term) {
-        let items = this.state.items
+    filterProductsMaterial(term) {
+        let items = this.state.originalItems
         items = items.filter(function(item) {
             console.log('item filter ' + item.material.name.includes(term))
             return item.material.name.includes(term)
+        })
+        this.setState({ items: items })
+    }
+
+    filterProductsStyle(term) {
+        let items = this.state.originalItems
+        items = items.filter(function(item) {
+            console.log('item filter ' + item.style.name.includes(term))
+            return item.style.name.includes(term)
         })
         this.setState({ items: items })
     }
@@ -64,7 +74,7 @@ class Products extends Component {
         return (<div>
             <Header />
             <div className="container">
-                <Sidebar filterProducts={this.filterProducts} />
+                <Sidebar filterProductsMaterial={this.filterProductsMaterial} filterProductsStyle={this.filterProductsStyle} />
                 <div className="col-sm-9 column" id="itemColumn">
                     <div className="row">
                         {/*<ul className="list-group">*/}

@@ -10,26 +10,26 @@ class Sidebar extends React.Component {
     }
 
     render() {
-        console.log(this.props.filterProducts)
+        console.log(this.props.filterProductsMaterial)
         return ( <div className="col-sm-3 column" id="filterColumn">
             <h4><strong>Filter Items</strong></h4>
             <br/>
             <p>Type</p>
-            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" onClick={() =>this.props.filterProducts('Alpaca')}/>
+            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" onClick={() =>this.props.filterProductsMaterial('Alpaca')}/>
 			<label htmlFor="typeAlpaca">Alpaca</label><br/>
-            <input type="checkbox" id="typeBlended" name="typeBlended"/>
+            <input type="checkbox" id="typeBlended" name="typeBlended" onClick={() =>this.props.filterProductsMaterial('Blended')}/>
 			<label htmlFor="typeBlended">Blended</label><br/>
-            <input type="checkbox" id="typeLlama" name="typeLlama"/>
+            <input type="checkbox" id="typeLlama" name="typeLlama" onClick={() =>this.props.filterProductsMaterial('Llama')}/>
 			<label htmlFor="typeLlama">Llama</label><br/>
-            <input type="checkbox" id="typeWool" name="typeWool"/>
+            <input type="checkbox" id="typeWool" name="typeWool" onClick={() =>this.props.filterProductsMaterial('Wool')}/>
 			<label htmlFor="typeWool">Wool</label><br/>
             <br/>
             <p>Style</p>
-            <input type="checkbox" id="styleCrew" name="styleCrew"/>
+            <input type="checkbox" id="styleCrew" name="styleCrew" onClick={() =>this.props.filterProductsStyle('Crew')}/>
 			<label htmlFor="styleCrew">Crew</label><br/>
-            <input type="checkbox" id="styleDress" name="styleDress"/>
+            <input type="checkbox" id="styleDress" name="styleDress" onClick={() =>this.props.filterProductsStyle('Dress')}/>
 			<label htmlFor="styleDress">Dress</label><br/>
-            <input type="checkbox" id="styleKnee" name="styleKnee"/>
+            <input type="checkbox" id="styleKnee" name="styleKnee" onClick={() =>this.props.filterProductsStyle('Knee')}/>
 			<label htmlFor="styleKnee">Knee</label><br/>
             <br/>
             <p>Size</p>
