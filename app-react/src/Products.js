@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router'
 
 import ProductCard from './components/ProductCard'
 import Sidebar from './components/Sidebar'
@@ -32,6 +33,7 @@ class Products extends Component {
         this.filterProducts = this.filterProducts.bind(this)
 
         this.state = {
+            // originalItems: [],
             items: [],
             filters: {}
         }
@@ -40,17 +42,23 @@ class Products extends Component {
     componentWillMount() {
         fetch('https://sock-o-ramma.herokuapp.com/api/items')
             .then(response => response.json())
-            // .then(response => console.log('response ' + response))
             .then(response => this.setState({ items: response }))
+            // .then(response => this.setState({ items: response, originalItems: response }))
+
     }
 
-    filterProducts(filters) {
-        this.setState({ filters: filters })
+    filterProducts(item) {
+        let items = this.state.items
+        items = items.filter(function(item) {
+            console.log('item filter ' + item.title.includes('The'))
+            return item.title.includes('The')
+        })
+        this.setState({ items: items })
     }
 
     render() {
         let items = this.state.items.map(function (item, key) {
-            return <ProductCard key={key} title={item.title} description={item.description} price={item.price} />
+            return <ProductCard key={key} title={item.title} description={item.description} price={item.price} onClick={() => browserHistory.push('/' + item.id)}/>
         })
 
         return (<div>

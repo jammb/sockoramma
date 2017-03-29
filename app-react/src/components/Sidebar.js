@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
             <h4><strong>Filter Items</strong></h4>
             <br/>
             <p>Type</p>
-            <input type="checkbox" id="typeAlpaca" name="typeAlpaca"/>
+            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" onClick={this.props.filterProducts}/>
 			<label htmlFor="typeAlpaca">Alpaca</label><br/>
             <input type="checkbox" id="typeBlended" name="typeBlended"/>
 			<label htmlFor="typeBlended">Blended</label><br/>
