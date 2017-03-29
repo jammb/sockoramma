@@ -10,11 +10,12 @@ class Sidebar extends React.Component {
     }
 
     render() {
+        console.log(this.props.filterProducts)
         return ( <div className="col-sm-3 column" id="filterColumn">
             <h4><strong>Filter Items</strong></h4>
             <br/>
             <p>Type</p>
-            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" checked={this.state.typeAlpaca} onChange={(e) => this.setState({typeAlpaca: e.target.checked})} />
+            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" onClick={this.props.filterProducts}/>
 			<label htmlFor="typeAlpaca">Alpaca</label><br/>
             <input type="checkbox" id="typeBlended" name="typeBlended"/>
 			<label htmlFor="typeBlended">Blended</label><br/>

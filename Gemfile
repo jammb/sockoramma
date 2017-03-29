@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'active_model_serializers', '~> 0.10.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -52,7 +52,8 @@ gem 'ransack'
 gem 'pg_search'
 gem 'rails_admin', '1.1.0'
 
-
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+  gem 'rack-cors'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
