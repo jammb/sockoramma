@@ -2,12 +2,11 @@ import React from 'react'
 
 class ProductCard extends React.Component {
     render() {
-        return  (   <div className="col-sm-9 column" id="itemColumn">
-                    <div className="row">
+        return  (   
                     <div className="col s6 m4">
                     <div className="card large">
                         <div className="card-image">
-                            <img src="./img/sample.jpg" className="productImage"/>
+                            <img src={"./img/sample.jpg"} className="productImage"/>
                         </div>
                         <div className="card-title black-text text-center productTitle">{this.props.title}</div>
 
@@ -19,8 +18,6 @@ class ProductCard extends React.Component {
                             <span className="productPrice pull-right">{this.props.price}</span>
                         </div>
                     </div>
-                </div>
-                </div>
                 </div>
         )
     }

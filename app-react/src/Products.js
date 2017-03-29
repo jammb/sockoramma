@@ -39,21 +39,34 @@ class Products extends Component {
 
     componentWillMount() {
         fetch('https://sock-o-ramma.herokuapp.com/api/items')
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .then(response => this.setState({items: response}))
+            .then(response => response.json())
+            // .then(response => console.log('response ' + response))
+            .then(response => this.setState({ items: response }))
     }
 
     filterProducts(filters) {
-        this.setState({filters: filters})
+        this.setState({ filters: filters })
     }
 
     render() {
+        let items = this.state.items.map(function (item, key) {
+            return <ProductCard key={key} title={item.title} description={item.description} price={item.price} />
+        })
+
         return (<div>
-            <Header/>
+            <Header />
             <div className="container">
-                <Sidebar filterProducts={this.filterProducts}/>
-                <ProductCard title="title" description="description" price="price"/>
+                <Sidebar filterProducts={this.filterProducts} />
+                <div className="col-sm-9 column" id="itemColumn">
+                    <div className="row">
+                        {/*<ul className="list-group">*/}
+                        {/*<ProductCard title="title" description="description" price="price"/>*/}
+                        {items}
+                        {/*</ul>*/}
+                    </div>
+                    <div>
+                    </div>
+                </div>
             </div>
         </div>
         );
