@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :picture, :price
+  attributes :id, :title, :description, :picture, :price, :featured
   belongs_to :material
   belongs_to :color
   belongs_to :style
