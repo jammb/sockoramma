@@ -24,7 +24,7 @@ def parse_data( body )
     material = Material.find_or_create_by(name: product[:material])
     color = Color.find_or_create_by(name: product[:color])
     style = Style.find_or_create_by(name: product[:style])
-    item = Item.create(
+    item = Item.find_or_create_by(
     title: product[:title],
     description: product[:description],
     picture: product[:photo],
