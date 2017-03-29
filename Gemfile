@@ -52,8 +52,6 @@ gem 'ransack'
 gem 'pg_search'
 gem 'rails_admin', '1.1.0'
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,14 +1,19 @@
 class StylesController < ApplicationController
 
-  def new
+  before_action :find_style, only: [:show, :destroy]
+  # before_action :require_user, only: [:edit, :show, :update]
+  before_action :is_owner, only: [:destroy]
 
+  def new
+    @style = Style.new
   end
 
   def create
-
+    @style = Style.find_or_create_by(params['id'])
   end
 
   def show
+    # find_style
   end
 
   def index
@@ -17,15 +22,19 @@ class StylesController < ApplicationController
   end
 
   def destroy
-
+    # find_style
+    @style.destroy
   end
 
 
   private
 
-  def find_by_id
+  def find_style
     @style = Style.find_by(params['id'])
   end
 
-  
+  def style_params
+    params.require(:style).permit(:name)
+  end
+
 end
