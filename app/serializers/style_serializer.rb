@@ -1,4 +1,4 @@
 class StyleSerializer < ActiveModel::Serializer
-  attributes :name
+  attributes :id, :name
   belongs_to :item
 end
