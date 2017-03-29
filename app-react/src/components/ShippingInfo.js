@@ -8,13 +8,13 @@ class CustomerInfo extends Component {
                    <h2><strong>Shipping Information</strong></h2>
             <br/>
 
-            <label for="streetAddress">Street Address</label>
+            <label htmlFor="streetAddress">Street Address</label>
             <input type="text" id="streetAddress" name="streetAddress" required placeholder="Street Address" /><br/><br/>
 
-            <label for="city">City</label>
+            <label htmlFor="city">City</label>
             <input type="text" id="city" name="city" required placeholder="City" /><br/><br/>
 
-            <label for="state">State</label>
+            <label htmlFor="state">State</label>
             <select id="state" name="state">	
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
@@ -69,7 +69,7 @@ class CustomerInfo extends Component {
 					<option value="WY">Wyoming</option>
 				</select> <br/><br/>
 
-            <label for="zipCode">Zip Code</label>
+            <label htmlFor="zipCode">Zip Code</label>
             <input type="text" id="zipCode" name="zipCode" required placeholder="Zip Code" /><br/><br/> 
         </div>
 
