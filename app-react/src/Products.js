@@ -47,11 +47,11 @@ class Products extends Component {
 
     }
 
-    filterProducts(item) {
+    filterProducts(term) {
         let items = this.state.items
         items = items.filter(function(item) {
-            console.log('item filter ' + item.title.includes('The'))
-            return item.title.includes('The')
+            console.log('item filter ' + item.material.name.includes(term))
+            return item.material.name.includes(term)
         })
         this.setState({ items: items })
     }
