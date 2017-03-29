@@ -15,21 +15,23 @@ class Sidebar extends React.Component {
             <h4><strong>Filter Items</strong></h4>
             <br/>
             <p>Type</p>
-            <input type="checkbox" id="typeAlpaca" name="typeAlpaca" onClick={() =>this.props.filterProductsMaterial('Alpaca')}/>
+            <input type="radio" id="typeAlpaca" name="filterRadio" onClick={() =>this.props.filterProductsMaterial('Alpaca')}/>
 			<label htmlFor="typeAlpaca">Alpaca</label><br/>
-            <input type="checkbox" id="typeBlended" name="typeBlended" onClick={() =>this.props.filterProductsMaterial('Blended')}/>
+            <input type="radio" id="typeBlended" name="filterRadio" onClick={() =>this.props.filterProductsMaterial('Blended')}/>
 			<label htmlFor="typeBlended">Blended</label><br/>
-            <input type="checkbox" id="typeLlama" name="typeLlama" onClick={() =>this.props.filterProductsMaterial('Llama')}/>
+            <input type="radio" id="typeLlama" name="filterRadio" onClick={() =>this.props.filterProductsMaterial('Llama')}/>
 			<label htmlFor="typeLlama">Llama</label><br/>
-            <input type="checkbox" id="typeWool" name="typeWool" onClick={() =>this.props.filterProductsMaterial('Wool')}/>
+            <input type="radio" id="typeWool" name="filterRadio" onClick={() =>this.props.filterProductsMaterial('Wool')}/>
 			<label htmlFor="typeWool">Wool</label><br/>
             <br/>
+
+            
             <p>Style</p>
-            <input type="checkbox" id="styleCrew" name="styleCrew" onClick={() =>this.props.filterProductsStyle('Crew')}/>
+            <input type="radio" id="styleCrew" name="filterRadio" onClick={() =>this.props.filterProductsStyle('Crew')}/>
 			<label htmlFor="styleCrew">Crew</label><br/>
-            <input type="checkbox" id="styleDress" name="styleDress" onClick={() =>this.props.filterProductsStyle('Dress')}/>
+            <input type="radio" id="styleDress" name="filterRadio" onClick={() =>this.props.filterProductsStyle('Dress')}/>
 			<label htmlFor="styleDress">Dress</label><br/>
-            <input type="checkbox" id="styleKnee" name="styleKnee" onClick={() =>this.props.filterProductsStyle('Knee')}/>
+            <input type="radio" id="styleKnee" name="filterRadio" onClick={() =>this.props.filterProductsStyle('Knee')}/>
 			<label htmlFor="styleKnee">Knee</label><br/>
             <br/>
             <p>Size</p>
