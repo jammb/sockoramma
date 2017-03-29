@@ -23,7 +23,7 @@ def parse_data( body )
     # binding.pry
     material = Material.find_or_create_by(name: product[:material])
     color = Color.find_or_create_by(name: product[:color])
-    style = Style.find_or_create_by(cut: product[:style])
+    style = Style.find_or_create_by(name: product[:style])
     item = Item.create(
     title: product[:title],
     description: product[:description],
