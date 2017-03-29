@@ -4,7 +4,7 @@ class SizeSerializer < ActiveModel::Serializer
   has_many :items, through: :quantities
 
   def quantity
-    object.items.quantities.first.quantity
+    object.items.first.quantities.first.quantity
   end
 
 end
