@@ -4,8 +4,8 @@ class SizeSerializer < ActiveModel::Serializer
   has_many :items, through: :quantities
 
   def quantity
-    binding.pry
-    object.item.quantities.quantity
+    # binding.pry
+    object.items.quantities.quantity
   end
 
 end
