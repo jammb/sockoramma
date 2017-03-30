@@ -13,4 +13,7 @@ class Item < ApplicationRecord
   validates :color_id, presence: true
   validates :style_id, presence: true
 
+  mount_uploader :picture, ItemPictureUploader
+
+
 end
