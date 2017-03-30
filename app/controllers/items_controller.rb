@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
 
   end
 
-  
+
   private
 
   def find_item
