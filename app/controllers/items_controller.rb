@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :find_style, only: [:show, :destroy]
 
   def index
-    # binding.pry
     @items = Item.all
     render json: @items, meta: meta_dict(@items)
   end
@@ -17,11 +16,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+
+  end
 
   private
 
   def find_item
     @item = Item.find(params[:id])
+    render json: @item
+  end
+
+  def item_params
+    params.permit(:title, :description, :picture, :price, :material, :color, :style, :featured)
   end
 
   def item_params

@@ -1,3 +1,5 @@
 tmp/*
 log/*
 tmp/pids/server.pid
+# Ignore application configuration
+/config/application.yml

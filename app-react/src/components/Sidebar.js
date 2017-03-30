@@ -13,7 +13,12 @@ class Sidebar extends React.Component {
         console.log(this.props.filterProductsMaterial)
         return ( <div className="col-sm-3 column" id="filterColumn">
             <h4><strong>Filter Items</strong></h4>
+            
+            <input type="radio" id="viewAll" name="filterRadio" onClick={() =>this.props.filterProductsStyle('')}/>
+            <label htmlFor="viewAll">View All</label>
+            
             <br/>
+            
             <p>Type</p>
             <input type="radio" id="typeAlpaca" name="filterRadio" onClick={() =>this.props.filterProductsMaterial('Alpaca')}/>
 			<label htmlFor="typeAlpaca">Alpaca</label><br/>
