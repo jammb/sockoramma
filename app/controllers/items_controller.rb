@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_style, only: [:show, :destroy]
 
   def index
+    # binding.pry
     @items = Item.all
     render json: @items
   end
@@ -13,7 +14,6 @@ class ItemsController < ApplicationController
   def show
 
   end
-
 
   private
 
