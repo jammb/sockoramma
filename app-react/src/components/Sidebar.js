@@ -40,13 +40,13 @@ class Sidebar extends React.Component {
 			<label htmlFor="styleKnee">Knee</label><br/>
             <br/>
             <p>Size</p>
-            <input type="checkbox" id="sizeSmall" name="sizeSmall"/>
+            <input type="radio" id="sizeSmall" name="sizeSmall"/>
 			<label htmlFor="sizeSmall">Small</label><br/>
-            <input type="checkbox" id="sizeMedium" name="sizeMedium"/>
+            <input type="radio" id="sizeMedium" name="sizeMedium"/>
 			<label htmlFor="sizeMedium">Medium</label><br/>
-            <input type="checkbox" id="sizeLarge" name="sizeLarge"/>
+            <input type="radio" id="sizeLarge" name="sizeLarge"/>
 			<label htmlFor="sizeLarge">Large</label><br/>
-            <input type="checkbox" id="sizeXLarge" name="sizeXLarge"/>
+            <input type="radio" id="sizeXLarge" name="sizeXLarge" />
 			<label htmlFor="sizeXLarge">Extra Large</label><br/>
         </div>
         )
