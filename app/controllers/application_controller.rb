@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
   def static
     render html: File.open("#{Rails.root}/public/index.html").read.html_safe, status: 200
   end
+  end
+
+  private
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
   def meta_dict(collection=nil)
     if collection
@@ -37,12 +44,5 @@ class ApplicationController < ActionController::Base
         @cart = Cart.create!(status: "active")
       end
     end
-  end
-
-  private
-
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
 
 end
