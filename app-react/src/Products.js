@@ -12,7 +12,6 @@ class Products extends Component {
         this.filterProductsMaterial = this.filterProductsMaterial.bind(this)
         this.filterProductsStyle = this.filterProductsStyle.bind(this)
         // this.filterProductsSize = this.filterProductsSize.bind(this)
-        // this.getItems = this.getItems.bind(this)
         this.addToCart = this.addToCart.bind(this)
 
         this.state = {
@@ -30,17 +29,14 @@ class Products extends Component {
             .then(response => this.setState({ items: response, originalItems: response }))
 
     }
-    //  getItems() {
-    //     fetch('https://sock-o-ramma.herokuapp.com/api/items')
-    //     .then(res => res.json())
-    //     .then(res => this.setState({items: res, originalItems: res}))
-    // }
-     addToCart(id) {
-        fetch('https://sock-o-ramma.herokuapp.com/api/items', {
+     addToCart(qnty, id, size) {
+        fetch('/api/carts/:cart_id/line_items', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                id: id
+               quantity: qnty,
+               item_id: id,
+               size_id: size
             })
         })
         .then(res => res.json())

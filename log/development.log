@@ -299,3 +299,35 @@ FOREIGN KEY ("item_id")
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7083706778042604675)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/api/carts/:cart_id/line_items" for 127.0.0.1 at 2017-03-30 15:38:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LineItemsController#create as */*
+  Parameters: {"quantity"=>1, "cart_id"=>":cart_id", "line_item"=>{}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 8.0ms)
+
+
+[Rollbar] Reporting exception: undefined local variable or method `current_cart' for #<LineItemsController:0x007f8949977640>
+Did you mean?  current_user
+[Rollbar] Scheduling item
+[Rollbar] Sending item
+[Rollbar] Got unexpected status code from Rollbar api: 400
+[Rollbar] Response: {
+  "err": 1,
+  "message": "access token required"
+}
+[Rollbar] Details: https://rollbar.com/instance/uuid?uuid=9affbcd7-fc20-40cf-92d8-e41fa9f09bd0 (only available if report was successful)
+[Rollbar] Exception uuid saved in env: 9affbcd7-fc20-40cf-92d8-e41fa9f09bd0
+  
+NameError (undefined local variable or method `current_cart' for #<LineItemsController:0x007f8949977640>
+Did you mean?  current_user):
+  
+app/controllers/line_items_controller.rb:4:in `create'
+  Rendering /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Punjab/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (362.5ms)
