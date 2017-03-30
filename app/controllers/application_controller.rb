@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   def static
     render html: File.open("#{Rails.root}/public/index.html").read.html_safe, status: 200
   end
-  end
 
   private
 
@@ -45,3 +44,4 @@ class ApplicationController < ActionController::Base
       @cart = Cart.create!(status: "active")
     end
   end
+end
