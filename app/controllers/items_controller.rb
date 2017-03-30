@@ -10,11 +10,19 @@ class ItemsController < ApplicationController
 
   end
 
-  
+  def show
+
+  end
+
+
   private
 
   def find_item
     @item = Item.find(params[:id])
+  end
+
+  def item_params
+    params.permit(:title, :description, :picture, :price, :material, :color, :style, :featured)
   end
 
 
