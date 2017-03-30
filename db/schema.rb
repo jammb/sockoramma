@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328205335) do
+ActiveRecord::Schema.define(version: 20170330135616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20170328205335) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
   create_table "colors", force: :cascade do |t|
@@ -52,6 +61,15 @@ ActiveRecord::Schema.define(version: 20170328205335) do
     t.index ["color_id"], name: "index_items_on_color_id", using: :btree
     t.index ["material_id"], name: "index_items_on_material_id", using: :btree
     t.index ["style_id"], name: "index_items_on_style_id", using: :btree
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+    t.index ["item_id"], name: "index_line_items_on_item_id", using: :btree
   end
 
   create_table "materials", force: :cascade do |t|
@@ -106,12 +124,16 @@ ActiveRecord::Schema.define(version: 20170328205335) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "admin",           default: false
+    t.string   "token"
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "carts", "users"
   add_foreign_key "items", "colors"
   add_foreign_key "items", "materials"
   add_foreign_key "items", "styles"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "items"
   add_foreign_key "orderings", "items"
   add_foreign_key "orderings", "orders"
   add_foreign_key "orders", "users"

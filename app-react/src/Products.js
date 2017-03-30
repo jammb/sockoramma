@@ -7,36 +7,19 @@ import Header from './components/Header'
 
 
 class Products extends Component {
-
-    //     constructor(props){
-    // super(props)
-    // this.getItems=this.getItems.bind(this)   // this.AddTodo = this.AddTodo.bind(this)
-    // this.addItems=this.addItems.bind(this)
-    // this.state = {                        // state of the page                    
-    //        items: []                              //start with empty state  
-    //     }
-    // }
-    // componentWillMount(){
-    //  this.getItems()
-    // }
-    //  getItems(){
-    //         fetch('/api/items')
-    //              .then (response => response.json())
-    //             .then(items => this.setState({items:items}))
-    //         }
-    // addItems(){
-    //     this.getItems()
-    //       }
-
-    constructor(props) {
+         constructor(props) {
         super(props)
         this.filterProductsMaterial = this.filterProductsMaterial.bind(this)
         this.filterProductsStyle = this.filterProductsStyle.bind(this)
+        // this.filterProductsSize = this.filterProductsSize.bind(this)
+        // this.getItems = this.getItems.bind(this)
+        this.addToCart = this.addToCart.bind(this)
 
         this.state = {
             originalItems: [],
             items: [],
-            filters: {}
+            filters: {},
+            cart: []
         }
     }
 
@@ -47,6 +30,28 @@ class Products extends Component {
             .then(response => this.setState({ items: response, originalItems: response }))
 
     }
+    //  getItems() {
+    //     fetch('https://sock-o-ramma.herokuapp.com/api/items')
+    //     .then(res => res.json())
+    //     .then(res => this.setState({items: res, originalItems: res}))
+    // }
+     addToCart(id) {
+        fetch('https://sock-o-ramma.herokuapp.com/api/items', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: id
+            })
+        })
+        .then(res => res.json())
+        .then(res => {
+            let cart = this.state.cart
+            cart.push(res)
+
+            this.setState({cart: cart})
+        })
+    }
+
 
     filterProductsMaterial(term) {
         let items = this.state.originalItems
@@ -65,10 +70,18 @@ class Products extends Component {
         })
         this.setState({ items: items })
     }
+    //  filterProductsSize(term) {
+    //     let items = this.state.originalItems
+    //     items = items.filter(function(item) {
+    //         console.log('item filter ' + item.sizes.name.includes(term))
+    //         return item.sizes.name.includes(term)
+    //     })
+    //     this.setState({ items: items })
+    // }
 
     render() {
-        let items = this.state.items.map(function (item, key) {
-            return <ProductCard key={key} title={item.title} description={item.description} price={item.price} onClick={() => browserHistory.push('/' + item.id)}/>
+        let items = this.state.items.map((item, key) => {
+            return <ProductCard key={key} id={item.id} title={item.title} description={item.description} price={item.price} addToCart={this.addToCart} onClick={() => browserHistory.push('/' + item.id)}/>
         })
 
         return (<div>
