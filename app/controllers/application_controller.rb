@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def static
-    render file: "public/index.html"
+    render html: File.open("#{Rails.root}/public/index.html").read.html_safe, status: 200
   end
 
   private
