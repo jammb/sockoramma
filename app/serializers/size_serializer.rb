@@ -1,10 +1,5 @@
 class SizeSerializer < ActiveModel::Serializer
-  attributes :id, :name #, :quantity
+  attributes :id, :name
   has_many :quantities
   has_many :items, through: :quantities
-
-  # def quantity
-  #
-  # end
-
 end
