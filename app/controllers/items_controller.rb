@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def find_item
     @item = Item.find(params[:id])
+    render json: @item
   end
 
   def item_params
