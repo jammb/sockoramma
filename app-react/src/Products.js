@@ -11,6 +11,7 @@ class Products extends Component {
         super(props)
         this.filterProductsMaterial = this.filterProductsMaterial.bind(this)
         this.filterProductsStyle = this.filterProductsStyle.bind(this)
+        this.filterProductsColor = this.filterProductsColor.bind(this)
         // this.filterProductsSize = this.filterProductsSize.bind(this)
         // this.getItems = this.getItems.bind(this)
         this.addToCart = this.addToCart.bind(this)
@@ -70,14 +71,15 @@ class Products extends Component {
         })
         this.setState({ items: items })
     }
-    //  filterProductsSize(term) {
-    //     let items = this.state.originalItems
-    //     items = items.filter(function(item) {
-    //         console.log('item filter ' + item.sizes.name.includes(term))
-    //         return item.sizes.name.includes(term)
-    //     })
-    //     this.setState({ items: items })
-    // }
+
+     filterProductsColor(term) {
+        let items = this.state.originalItems
+        items = items.filter(function(item) {
+            console.log('item filter ' + item.color.name.includes(term))
+            return item.color.name.includes(term)
+        })
+        this.setState({ items: items })
+    }
 
     render() {
         let items = this.state.items.map((item, key) => {
@@ -87,7 +89,7 @@ class Products extends Component {
         return (<div>
             <Header />
             <div className="container">
-                <Sidebar filterProductsMaterial={this.filterProductsMaterial} filterProductsStyle={this.filterProductsStyle} />
+                <Sidebar filterProductsMaterial={this.filterProductsMaterial} filterProductsStyle={this.filterProductsStyle} filterProductsColor={this.filterProductsColor}/>
                 <div className="col-sm-9 column" id="itemColumn">
                     <div className="row">
                         {/*<ul className="list-group">*/}
