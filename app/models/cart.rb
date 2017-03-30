@@ -1,5 +1,5 @@
 class Cart < ApplicationRecord
-  belongs_to :user_id, optional: true
+  belongs_to :user, optional: true
   has_many :line_items
   has_many :items, through: :line_items
 
@@ -13,5 +13,5 @@ class Cart < ApplicationRecord
     line_items.sum(:quantity) * PER_ITEM_SHIPPING
   end
 
-  
+
 end
