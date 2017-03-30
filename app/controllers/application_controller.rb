@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
       elsif current_user && current_user.cart
         @cart = current_user.cart
       elsif current_user
-        @cart = current_user.cart.create
+        @cart = current_user.cart.create!
       else
         @cart = Cart.create!(status: "active")
       end
