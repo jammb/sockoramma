@@ -26,13 +26,13 @@ class Signup extends Component {
         var confirmPassword = this.state.confirmPassword
         console.log(name, email, password)
 
-        if (name === '' || email === '' || password === '' || confirmPassword === '') {
-            alert('You must fill in all fields')
-        }  else if (!email.includes('@') || (email.slice(email.length - 4, email.length - 3) !== '.')) {
-            alert('You must enter a valid email address')
-        } else if (password !== confirmPassword) {
-            alert('Your passwords must match')
-        } else {
+        // if (name === '' || email === '' || password === '' || confirmPassword === '') {
+        //     alert('You must fill in all fields')
+        // }  else if (!email.includes('@') || (email.slice(email.length - 4, email.length - 3) !== '.')) {
+        //     alert('You must enter a valid email address')
+        // } else if (password !== confirmPassword) {
+        //     alert('Your passwords must match')
+        // } else {
 
         fetch('https://sock-o-ramma.herokuapp.com/api/users', {
             method: 'POST',
@@ -46,7 +46,7 @@ class Signup extends Component {
             password: password
         })
     })
-        .then(function(response) {                
+        .then(function(response) {
                 console.log('response.json ' + response.json)
                 return response.json();
             })
@@ -61,15 +61,13 @@ class Signup extends Component {
                 alert('Signup error: ' + response)
             }
         })
-        
-        }
 
 }
 
     render() {
 
 
-        
+
         return <div>
             <div className="row header">
                 <div className="col-sm-6">
@@ -82,7 +80,7 @@ class Signup extends Component {
                     <h5 className="panel-title text-center">Sign Up</h5>
                 </div>
                 <div className="panel-body">
-                
+
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" className="form-control" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})} required/>
@@ -103,7 +101,7 @@ class Signup extends Component {
                         <input type="password" id="confirmPassword" className="form-control" maxLength="72"  value={this.state.confirmPassword} onChange={(e) => this.setState({confirmPassword: e.target.value})} required />
                     </div>
 
-                    
+
                 </div>
 
                 <div className="panel-footer text-center">
@@ -120,7 +118,7 @@ class Signup extends Component {
                     </div>
             </div>
             </div>
-        
+
     }
 }
 
