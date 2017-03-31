@@ -8,7 +8,7 @@ class ProductCard extends React.Component {
         return   <div className="col s6 m4">
                     <div className="card large">
                         <div className="card-image">
-                            <img src={"./img/sample.jpg"} className="productImage"/>
+                            <img src={this.props.picture} className="productImage"/>
                         </div>
                         <div className="card-title black-text text-center productTitle">{this.props.title}</div>
 

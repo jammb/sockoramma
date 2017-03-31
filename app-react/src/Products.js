@@ -83,7 +83,7 @@ class Products extends Component {
 
     render() {
         let items = this.state.items.map((item, key) => {
-            return <ProductCard key={key} id={item.id} title={item.title} description={item.description} price={item.price} addToCart={this.addToCart} onClick={() => browserHistory.push('/' + item.id)}/>
+            return <ProductCard key={key} id={item.id} title={item.title} description={item.description} price={item.price} picture={item.picture.large.url} addToCart={this.addToCart} onClick={() => browserHistory.push('/' + item.id)}/>
         })
 
         return (<div>
