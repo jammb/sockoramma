@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  root 'items#index'
+
   get "/api/login" => 'sessions#new', as: :login_path
   post "/api/login" => 'sessions#create'
 
