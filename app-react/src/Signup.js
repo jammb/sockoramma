@@ -62,7 +62,7 @@ class Signup extends Component {
                 alert('Signup error: ' + response)
             }
         })
-
+        }
 }
 
     render() {
