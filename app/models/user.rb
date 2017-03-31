@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_many :orders
   has_many :addresses
-  has_many :notes
   has_many :orders, -> { where(status: "finished") }, class_name: "Cart"
   has_one :cart, -> { where(status: "active") }
 
