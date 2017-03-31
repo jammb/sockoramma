@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router'
 import Header from './components/Header'
 
 
-class signin extends Component {
+class Signin extends Component {
 
     constructor(props) {
         super(props)
@@ -31,7 +31,7 @@ class signin extends Component {
 
         body: JSON.stringify({
             email: email,
-            password: password,
+            password: password
         })
     })
 
@@ -101,4 +101,4 @@ class signin extends Component {
     }
 }
 
-export default signin;
+export default Signin;
