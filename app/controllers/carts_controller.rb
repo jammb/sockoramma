@@ -20,7 +20,7 @@ class CartsController < ApplicationController
   private
 
   def create_params
-    
+    # params.permit(:user_id)
   end
 
 end
