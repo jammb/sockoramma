@@ -26,13 +26,14 @@ class Signup extends Component {
         var confirmPassword = this.state.confirmPassword
         console.log(name, email, password)
 
-        // if (name === '' || email === '' || password === '' || confirmPassword === '') {
-        //     alert('You must fill in all fields')
-        // }  else if (!email.includes('@') || (email.slice(email.length - 4, email.length - 3) !== '.')) {
-        //     alert('You must enter a valid email address')
-        // } else if (password !== confirmPassword) {
-        //     alert('Your passwords must match')
-        // } else {
+        if (name === '' || email === '' || password === '' || confirmPassword === '') {
+            alert('You must fill in all fields')
+        }  else if (!email.includes('@') || (email.slice(email.length - 4, email.length - 3) !== '.')) {
+            alert('You must enter a valid email address')
+        } else if (password !== confirmPassword) {
+            alert('Your passwords must match')
+        } else {
+
 
         fetch('https://sock-o-ramma.herokuapp.com/api/users', {
             method: 'POST',
