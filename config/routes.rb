@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/login" => 'sessions#new', as: :login_path
-  post "/login" => 'sessions#create'
+  get "/api/login" => 'sessions#new', as: :login_path
+  post "/api/login" => 'sessions#create'
 
   # fallback route
   get "/:param1(/:param2)(/:param3)" => "application#static"
