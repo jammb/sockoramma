@@ -9,6 +9,8 @@ import { Router, Route, browserHistory } from 'react-router'
 
 import Products from './Products'
 import Checkout from './Checkout'
+import Signup from './Signup'
+import Signin from './Signin'
 
 // Configure routes
 class Routes extends React.Component {
@@ -16,6 +18,8 @@ class Routes extends React.Component {
         return <Router history={browserHistory}>
             <Route path="/" component={Products} />
             <Route path="/checkout" component={Checkout} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/signin" component={Signin} />
         </Router>
     }
 }

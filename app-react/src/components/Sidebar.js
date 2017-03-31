@@ -39,15 +39,19 @@ class Sidebar extends React.Component {
             <input type="radio" id="styleKnee" name="filterRadio" onClick={() =>this.props.filterProductsStyle('Knee')}/>
 			<label htmlFor="styleKnee">Knee</label><br/>
             <br/>
-            <p>Size</p>
-            <input type="checkbox" id="sizeSmall" name="sizeSmall"/>
-			<label htmlFor="sizeSmall">Small</label><br/>
-            <input type="checkbox" id="sizeMedium" name="sizeMedium"/>
-			<label htmlFor="sizeMedium">Medium</label><br/>
-            <input type="checkbox" id="sizeLarge" name="sizeLarge"/>
-			<label htmlFor="sizeLarge">Large</label><br/>
-            <input type="checkbox" id="sizeXLarge" name="sizeXLarge"/>
-			<label htmlFor="sizeXLarge">Extra Large</label><br/>
+            <p>Color</p>
+            <input type="radio" id="colorBlack" name="filterRadio" onClick={() =>this.props.filterProductsColor('Black')}/>
+			<label htmlFor="colorBlack">Black</label><br/>
+            <input type="radio" id="colorBrown" name="filterRadio" onClick={() =>this.props.filterProductsColor('Brown')}/>
+			<label htmlFor="colorBrown">Brown</label><br/>
+            <input type="radio" id="colorCharcoal" name="filterRadio" onClick={() =>this.props.filterProductsColor('Charcoal')}/>
+			<label htmlFor="colorCharcoal">Charcoal</label><br/>
+            <input type="radio" id="colorCream" name="filterRadio" onClick={() =>this.props.filterProductsColor('Cream')}/>
+			<label htmlFor="colorCream">Cream</label><br/>
+            <input type="radio" id="colorGrey" name="filterRadio" onClick={() =>this.props.filterProductsColor('Grey')}/>
+			<label htmlFor="colorGrey">Grey</label><br/>
+            <input type="radio" id="colorVarious" name="filterRadio" onClick={() =>this.props.filterProductsColor('Various')}/>
+			<label htmlFor="colorVarious">Various</label><br/>
         </div>
         )
     }

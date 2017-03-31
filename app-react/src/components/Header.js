@@ -11,7 +11,7 @@ class Header extends Component {
 
                 <div className="col-sm-6">
                     <ul className="list-inline pull-right">
-                        <li className="headerRightContent"><a href="https://www.etsy.com/cart?ref=hdr">
+                        <li className="headerRightContent"><a href="">
                             <i className="fa fa-shopping-cart black-text"></i>
                             <div>Cart</div>
                         </a>
