@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       render json: @user, serializer: UserExpandedSerializer
     else
       flash[:danger] = "Incorrect credentials. Please try again."
-      # redirect_to :login
     end
   end
 
