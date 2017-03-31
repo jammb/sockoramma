@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 
 
 class CustomerInfo extends Component {
+	constructor(props) {
+		super(props)
+	
+	this.buyButton = this.buyButton.bind(this)
+
+	}
+
+	buyButton() {
+		alert('Your items will be shipped in 3-5 business days')
+	}
 
   render() {
     return  <div className="text-center">
-                   <h2><strong>Shipping Information</strong></h2>
+                   <h2><strong>Customer Information</strong></h2>
             <br/>
+
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="name" /><br/><br/>
 
             <label htmlFor="streetAddress">Street Address</label>
             <input type="text" id="streetAddress" name="streetAddress" required placeholder="Street Address" /><br/><br/>
@@ -15,7 +28,8 @@ class CustomerInfo extends Component {
             <input type="text" id="city" name="city" required placeholder="City" /><br/><br/>
 
             <label htmlFor="state">State</label>
-            <select id="state" name="state">	
+			<input type="text" id="state" name="state" required placeholder="State" /><br/><br/>
+            {/*<select id="state" name="state">	
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
@@ -67,10 +81,21 @@ class CustomerInfo extends Component {
 					<option value="WV">West Virginia</option>
 					<option value="WI">Wisconsin</option>
 					<option value="WY">Wyoming</option>
-				</select> <br/><br/>
+				</select> */}
+				<br/>
 
             <label htmlFor="zipCode">Zip Code</label>
-            <input type="text" id="zipCode" name="zipCode" required placeholder="Zip Code" /><br/><br/> 
+            <input type="text" id="zipCode" name="zipCode" required placeholder="Zip Code" /><br/><br/>
+
+
+            <label htmlFor="cardNumber">Credit Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" required placeholder="Credit Card Number" /><br/><br/>
+			
+            <label htmlFor="expiration">Credit Card Expiration</label>
+            <input type="text" id="expiration" name="expiration" required placeholder="Credit Card Expiration" /><br/><br/>
+			
+			<button type="button" className="btn btn-success" onClick={this.buyButton}>Buy</button>
+
         </div>
 
   }

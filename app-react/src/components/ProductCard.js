@@ -1,4 +1,5 @@
 import React from 'react'
+import { browserHistory } from 'react-router'
 
 class ProductCard extends React.Component {
     // componentWillMount() {
@@ -17,7 +18,10 @@ class ProductCard extends React.Component {
                         </div>
 
                         <div className="card-action">
-                            <button type="button" className="button" onClick={() => this.props.addToCart(this.props.id)}><i className="fa fa-shopping-cart black-text"></i> Add to Cart</button>
+                            <button type="button" className="button" 
+                            /*onClick={() => this.props.addToCart(this.props.id)}*/
+                            onClick={() => browserHistory.push('/checkout') }
+                            ><i className="fa fa-usd black-text"></i> Buy It Now</button>
                             <span className="productPrice pull-right">{this.props.price}</span>
                         </div>
                      
