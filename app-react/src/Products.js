@@ -79,7 +79,7 @@ class Products extends Component {
             return item.color.name.includes(term)
         })
         this.setState({ items: items })
-    }
+    }   
 
     render() {
         let items = this.state.items.map((item, key) => {
