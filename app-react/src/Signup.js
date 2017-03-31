@@ -52,19 +52,17 @@ class Signup extends Component {
                 return response.json();
             })
         .then(function(response) {
-            console.log('response.api_token ' + response.api_token)
+            console.log('response.token ' + response.token)
 
-            if (response.api_token) {
-                (console.log('response token true ' + response.api_token))
-                sessionStorage.setItem('token', response.api_token)
+            if (response.token) {
+                (console.log('response token true ' + response.token))
+                sessionStorage.setItem('token', response.token)
                 browserHistory.push('/')
             } else {
                 alert('Signup error: ' + response)
             }
         })
-
         }
-
 }
 
     render() {
@@ -72,7 +70,11 @@ class Signup extends Component {
 
 
         return <div>
-            <Header />
+            <div className="row header">
+                <div className="col-sm-6">
+                    <img id="logoImage" src="img/logo.png" alt="Logo" />
+                </div>
+            </div>
             <div className="container">
                     <div className="panel panel-default">
                 <div className="panel-heading">
