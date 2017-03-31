@@ -34,6 +34,13 @@ class Signup extends Component {
         //     alert('Your passwords must match')
         // } else {
 
+
+
+
+
+
+
+
         fetch('https://sock-o-ramma.herokuapp.com/api/users', {
             method: 'POST',
             headers: {
