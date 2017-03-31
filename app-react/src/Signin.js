@@ -40,10 +40,10 @@ class signin extends Component {
         })
 
     .then(function(response) {
-            console.log('response ' + response.toString);
+            console.log('response ' + response);
 
-            if (response.api_token) {
-                sessionStorage.setItem('token', response.api_token);
+            if (response.token) {
+                sessionStorage.setItem('token', response.token);
                 browserHistory.push('/')            }
             else {
                 alert('There was an error signing in');
@@ -58,7 +58,11 @@ class signin extends Component {
 
         
         return <div>
-            <Header />
+            <div className="row header">
+                <div className="col-sm-6">
+                    <img id="logoImage" src="img/logo.png" alt="Logo" />
+                </div>
+            </div>
             <div className="container">
                     <div className="panel panel-default">
                 <div className="panel-heading">

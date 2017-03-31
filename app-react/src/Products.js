@@ -87,7 +87,24 @@ class Products extends Component {
         })
 
         return (<div>
-            <Header />
+            <div className="row header">
+                <div className="col-sm-6">
+                    <img id="logoImage" src="img/logo.png" alt="Logo" />
+                </div>
+
+                <div className="col-sm-6">
+                    <ul className="list-inline pull-right">
+                        <li className="headerRightContent"><a href="">
+                            <i className="fa fa-shopping-cart fa-2x black-text"></i>
+                            </a>
+                        </li>
+                        <li className="headerRightContent"><a href="">
+                            <i className="fa fa-sign-out fa-2x black-text"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div className="container">
                 <Sidebar filterProductsMaterial={this.filterProductsMaterial} filterProductsStyle={this.filterProductsStyle} filterProductsColor={this.filterProductsColor}/>
                 <div className="col-sm-9 column" id="itemColumn">
