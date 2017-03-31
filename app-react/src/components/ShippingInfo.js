@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { browserHistory } from 'react-router'
 
 class CustomerInfo extends Component {
 	constructor(props) {
@@ -11,6 +11,7 @@ class CustomerInfo extends Component {
 
 	buyButton() {
 		alert('Your items will be shipped in 3-5 business days')
+		browserHistory.push('/') 
 	}
 
   render() {
