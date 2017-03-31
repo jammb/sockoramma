@@ -27,6 +27,19 @@ end
 
   config.excluded_models << "orderings"
 
+  config.model 'User' do
+    object_label_method :name
+   list do
+      exclude_fields :password_digest, :token
+    end
+    edit do
+      exclude_fields :password_digest, :token
+    end
+    show do
+      exclude_fields :password_digest, :token
+    end
+  end
+
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar true
